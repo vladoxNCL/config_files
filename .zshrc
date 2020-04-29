@@ -110,20 +110,29 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshconfig="vim ~/.zshrc"
+ alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# Path aliases
 alias .="ls -a"
 alias ..="cd .."
 alias ...="cd ../.."
-alias cd..="cd .."
 alias ~="cd ~"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"
-alias ncl="cd ~/Dropbox/Newcastle"
-alias phd="cd ~/Dropbox/Newcastle/PhD"
+alias drop="cd ~/Dropbox"
+alias ncl="drop && cd Newcastle"
+alias phd="ncl && cd PhD"
+alias fair="phd && cd fairnonimity"
+
+# Launch Application aliases
 alias vim="gvim -v"
 alias calendar="cal"
+alias jup="phd && jupyter lab"
+alias jupf="fair && jupyter lab"
 alias weather="curl wttr.in"
+alias sau="sudo apt update && sudo apt upgrade"
+alias o="xdg-open"
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
@@ -144,3 +153,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source /etc/zsh_command_not_found

@@ -18,6 +18,7 @@ set number          " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
+filetype plugin on      " required for vim-latex to work
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching [{()}]
@@ -49,7 +50,10 @@ let mapleader="\<Space>" " leader is Space
 " save session
 nnoremap <leader>s :mksession<CR>
 
-" Little Hacks
+
+" Path aliases
+command! PhD cd ~/Dropbox/Newcastle/PhD/
+command! Fair cd ~/Dropbox/Newcastle/PhD/fairnonimity/paper/
 
 " Filename autocomplete
 imap ,<Tab> <C-X><C-F>
@@ -75,25 +79,17 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 "insert line at bottom
 :map <leader>o m`o<ESC>``
 " new vertical pane right shortcut
-nnoremap <leader>v :rightbelow vnew<CR>
+nnoremap <leader>h :rightbelow vnew<CR>
 " new horizontal pane below shortcut
-nnoremap <leader>h :rightbelow new<CR>
-
-" Launch Config
-call pathogen#infect()                      " use pathogen
-Helptags
-
-" markdown recognise
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-filetype plugin on
-syntax enable       " enable syntax processing
-set grepprg=grep\ -nH\ $*
-filetype indent on
+nnoremap <leader>v :rightbelow new<CR>
 
 " LaTeX
 let g:tex_flavor = 'latex'
+
 let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'pdf, aux'
+
 let g:Tex_HotKeyMappings = 'ecuacion, align, tabular, includegraphics'
 set winaltkeys=no
 " folding environments
@@ -105,6 +101,7 @@ map <f2> :w<cr><leader>ll
 let g:Tex_Env_align = "\\begin{align*}\<CR><++>\<CR>\\end{align*}<++>"
 let g:Tex_Env_frame = "\\begin{frame}[<++>]\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}\<CR><++>"
 let g:Tex_Env_block = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}\<CR><++>"
+let g:Tex_Env_definition = "\\begin{definition}[<++>]\<CR><++>\<CR>\\end{definition}\<CR><++>"
 let g:Tex_Env_bmatrix = "\\begin{bmatrix*}[r] <++> \\end{bmatrix*}<++>"
 let g:Tex_Env_includegraphics = "\\includegraphics[<++>]{<++>}<++>"
 let g:Tex_Env_ecuacion = "\\[<++>\\]<++>"

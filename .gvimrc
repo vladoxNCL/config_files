@@ -2,5 +2,5 @@
 if has('gui_macvim')
     set guifont=Monaco:h16     " OSX.
 else
-    set guifont=Monospace\ 14  " Linux.
+    set guifont=Monospace\ 12  " Linux.
 endif
