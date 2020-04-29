@@ -7,3 +7,6 @@
 [submodule ".vim/pack/vladox/start/vim-numbertoggle"]
 	path = .vim/pack/vladox/start/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "xcape"]
+	path = xcape
+	url = https://github.com/alols/xcape.git
