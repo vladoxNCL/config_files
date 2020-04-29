@@ -1,0 +1,9 @@
+[submodule ".vim/pack/vladox/start/bullets.vim"]
+	path = .vim/pack/vladox/start/bullets.vim
+	url = https://github.com/dkarter/bullets.vim.git
+[submodule ".vim/pack/vladox/start/vim-latex"]
+	path = .vim/pack/vladox/start/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
+[submodule ".vim/pack/vladox/start/vim-numbertoggle"]
+	path = .vim/pack/vladox/start/vim-numbertoggle
+	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
